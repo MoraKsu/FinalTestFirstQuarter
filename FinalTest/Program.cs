@@ -1,19 +1,12 @@
 ﻿static string[] FilterArrayStrings(string[] inputArray)
 {
-  int count = 0;
-  for (int i = 0; i < inputArray.Length; i++)
-  {
-    if (inputArray[i].Length <= 3)
-    {
-      count++;
-    }
-  }
+  int limitLength = 3;
+  int count = 0;  
+  string[] newArray = new string[inputArray.Length];
 
-  string[] newArray = new string[count];
-  count = 0;
   for (int i = 0; i < inputArray.Length; i++)
   {
-    if (inputArray[i].Length <= 3)
+    if (inputArray[i].Length <= limitLength)
     {
       newArray[count] = inputArray[i];
       count++;
@@ -38,7 +31,7 @@ string[] inputArray = new string[num];
 for (int i = 0; i < inputArray.Length; i++)
 {
   Console.Write($"Input {i + 1} string: ");
-  inputArray[i] = Console.ReadLine();
+  inputArray[i] = Console.ReadLine()!;
 }
 
 string[] newArray = FilterArrayStrings(inputArray);
